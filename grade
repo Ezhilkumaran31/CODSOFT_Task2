@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class grade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final double A_GRADE = 90.0;
+        final double B_GRADE = 80.0;
+        final double C_GRADE = 70.0;
+        final double D_GRADE = 60.0;
+
+        System.out.println("Enter marks obtained (out of 100) in each subject:");
+        System.out.print("Subject 1: ");
+        int subject1Marks = scanner.nextInt();
+
+        System.out.print("Subject 2: ");
+        int subject2Marks = scanner.nextInt();
+
+        System.out.print("Subject 3: ");
+        int subject3Marks = scanner.nextInt();
+
+        int totalMarks = subject1Marks + subject2Marks + subject3Marks;
+        double averagePercentage = (double) totalMarks / 3;
+        char grade;
+        if (averagePercentage >= A_GRADE) {
+            grade = 'A';
+        } else if (averagePercentage >= B_GRADE) {
+            grade = 'B';
+        } else if (averagePercentage >= C_GRADE) {
+            grade = 'C';
+        } else if (averagePercentage >= D_GRADE) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+        System.out.println("\nResults:");
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Average Percentage: " + averagePercentage + "%");
+        System.out.println("Grade: " + grade);
+
+        scanner.close();
+    }
+}
